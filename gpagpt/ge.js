@@ -8,7 +8,6 @@ function calculateGPA() {
     let phyCC1 = parseFloat(document.getElementById("phy-cc1").value);
     let phyCC2 = parseFloat(document.getElementById("phy-cc2").value);
     let phyCC3 = parseFloat(document.getElementById("phy-cc3").value);
-    let phyCC4 = parseFloat(document.getElementById("phy-cc4").value);
     
     let frCC1 = parseFloat(document.getElementById("fr-cc1").value);
     let frCC2 = parseFloat(document.getElementById("fr-cc2").value);
@@ -53,8 +52,8 @@ function calculateGPA() {
     let currentcoef =0;
     let currentgpa =0;
     let currenttotalgrades=0;
-    const midterms = [mathCC1, mathCC2, mathCC3, phyCC1, phyCC2, phyCC3, phyCC4, frCC1, frCC2, frCC3, enCC1, enCC2, enCC3, bsCC1, bsCC2, aomCC1, aomCC2, tomCC1, tomCC2, chemlabCC1, chemlabCC2, geoCC1, geoCC2, petCC1, petCC2];
-    const coefs = [2, 1, 3, 1, 2, 1, 2, 0.5, 0.75, 0.75, 0.5, 0.75, 0.75, 1, 1, 0.5, 1.25, 0.5, 1.25, 1, 1, 2, 2, 1, 1];
+    const midterms = [mathCC1, mathCC2, mathCC3, phyCC1, phyCC2, phyCC3, frCC1, frCC2, frCC3, enCC1, enCC2, enCC3, bsCC1, bsCC2, aomCC1, aomCC2, tomCC1, tomCC2, chemlabCC1, chemlabCC2, geoCC1, geoCC2, petCC1, petCC2];
+    const coefs = [2, 1, 3, 1, 2, 3, 0.5, 0.75, 0.75, 0.5, 0.75, 0.75, 1, 1, 0.5, 1.25, 0.5, 1.25, 1, 1, 2, 2, 1, 1];
     for (let i = 0; i < midterms.length; i++) {
        if(parseFloat(midterms[i])>-1){
           currentcoef = currentcoef + parseFloat(coefs[i]);
@@ -96,9 +95,6 @@ function calculateGPA() {
    }
    if(isNaN(phyCC3)){
       phyCC3=0;
-   }
-   if(isNaN(phyCC4)){
-      phyCC4=0;
    }
    if(isNaN(frCC1)){
       frCC1=0;
@@ -190,7 +186,7 @@ function calculateGPA() {
     // Calculate the GPA
     let totalCredits = 30; // Total credits of all courses
     let mathGPA = ((mathCC1 * 2) + (mathCC2 * 1) + (mathCC3 * 3)) / 6;
-    let phyGPA = ((phyCC1 * 1) + (phyCC2 * 2) + (phyCC3 * 1) + (phyCC4 * 2)) / 6;
+    let phyGPA = ((phyCC1 * 1) + (phyCC2 * 2) + (phyCC3 * 3)) / 6;
     let frGPA = ((frCC1 * 0.5) + (frCC2 * 0.75) + (frCC3 * 0.75)) / 2;
     let enGPA = ((enCC1 * 0.5) + (enCC2 * 0.75) + (enCC3 * 0.75)) / 2;
     let bsGPA = ((bsCC1 * 1) + (bsCC2 * 1)) / 2;
